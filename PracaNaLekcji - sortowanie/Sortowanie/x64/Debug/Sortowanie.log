@@ -1,5 +1,0 @@
-﻿  alg.cpp
-C:\Users\Robert\Desktop\SCI_INF\PracaNaLekcji - sortowanie\Sortowanie\alg.cpp(20,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  Sortowanie.cpp
-  Generowanie kodu...
-  Sortowanie.vcxproj -> C:\Users\Robert\Desktop\SCI_INF\PracaNaLekcji - sortowanie\x64\Debug\Sortowanie.exe
