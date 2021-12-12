@@ -14,4 +14,3 @@ public:
 	string deszyfracja(string wlasny_tekst_wejscie);
 	string RSA(string wlasny_tekst_wejscie);
 };
-

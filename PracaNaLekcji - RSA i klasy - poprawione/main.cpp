@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include "szyfr.h"
 
@@ -47,5 +47,6 @@ int main()
     {
         cout << endl;
         cout << "Wybrany zly rodzaj szyfrowania, uruchom program ponownie" << endl;
+        exit;
     }
 }

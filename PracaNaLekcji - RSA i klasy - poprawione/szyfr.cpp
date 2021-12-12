@@ -1,4 +1,4 @@
-﻿#include "szyfr.h"
+#include "szyfr.h"
 #include <iostream>
 #include <string>
 
@@ -90,36 +90,39 @@ string szyfr::deszyfracja(string wlasny_tekst_wejscie)
     return string_dane;
 }
 
-int odwrotnosc_modulo(int a, int m)
+int mod(int a, int b)
 {
-    for (int y = 1; y < m; y++)
-        if (((a % m) * (y % m)) % m == 1)
-            return y;
+    for (int i = 1; i < b; i++)
+        if (((a % b) * (i % b)) % b == 1)
+            return i;
 }
 
 string szyfr::RSA(string wlasny_tekst_wejscie)
 {
-    int liczba_pierwsza1, lizba_pierwsza2;
-    cout << "Podaj 1 liczbe pierwsza: ";
-    cin >> liczba_pierwsza1;
-    cout << "Podaj 1 liczbe pierwsza: ";
-    cin >> lizba_pierwsza2;
-    int l = liczba_pierwsza1 * lizba_pierwsza2;
-    int f_eulera = (liczba_pierwsza1 - 1) * (lizba_pierwsza2 - 1);
-    cout << "Podaj liczbe z przedzialu od 1 do " << z << endl;
-    cout << "Ta liczba i " << f_eulera << " powinny byc wzglednie pierwsze" << endl;
-    int e; 
-    cin >> e;
-    int d; 
-    d = odwrotnosc_modulo(e, f_eulera);
+    int l1;
+    int l2;
+    cout << "Wybierz liczbe pierwsza" << endl;
+    cin >> l1;
+    cout << "Wybierz kolejna liczbe pierwsza" << endl;
+    cin >> l2;
 
-    pair<int, int> publiczny;
-    publiczny.first = l;
-    publiczny.second = e;
-    cout << "Klucz publiczny: " << publiczny.first << " - " << publiczny.second << endl;
-    pair<int, int> prywatny;
-    prywatny.first = l;
-    prywatny.second = d;
-    cout << "Klucz prywatny: " << prywatny.first << " - " << prywatny.second << endl;
+    int f = l1 * l2;
+    int euler = (l1 - 1) * (l2 - 1);
+
+    cout << "Wybierz liczbe od 1 do " << euler << endl;
+    cout << "Liczba ta oraz " << euler << " musi byc wzglednie pierwsza" << endl;
+    int e;
+    cin >> e;
+    int d = mod(e, euler);
+
+    pair<int, int> pub;
+    pub.first = f;
+    pub.second = e;
+    cout << "klucz publiczny: " << pub.first << " " << pub.second << endl;
+
+    pair<int, int> pryw;
+    pryw.first = f;
+    pryw.second = d;
+    cout << "klucz prywatny: " << pryw.first << " " << pryw.second << endl;
     return " ";
 }
